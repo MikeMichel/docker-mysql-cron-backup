@@ -17,4 +17,5 @@ COPY ["run.sh", "backup.sh", "restore.sh", "/"]
 RUN mkdir /backup && chmod u+x /backup.sh /restore.sh
 VOLUME ["/backup"]
 
-CMD dockerize -wait tcp://${MYSQL_HOST}:${MYSQL_PORT} -timeout ${TIMEOUT} /run.sh
+#CMD dockerize -wait tcp://${MYSQL_HOST}:${MYSQL_PORT} -timeout ${TIMEOUT} /run.sh
+CMD ./run.sh
